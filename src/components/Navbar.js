@@ -15,7 +15,7 @@ function Navbar() {
     return (
         <nav className="navbar">
             <ul className="nav-links">
-                <li><Link to="/dashboard">Home</Link></li>
+                {(userRole === 'HR' || userRole === 'manager') && <li><Link to="/dashboard">Home</Link></li>}
                 <li><Link to="/projects">Projects</Link></li>
                 {userRole === 'HR' && <li><Link to="/create-project">Create Project</Link></li>}
                 {(userRole === 'HR' || userRole === 'manager') && <li><Link to="/create-task">Create Task</Link></li>}
