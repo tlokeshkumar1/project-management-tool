@@ -17,7 +17,7 @@ function App() {
         <div className="App">
             <Navbar />
             <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
+                {(role === 'HR' || role === 'manager' || role === 'employee') && <Route path="/dashboard" element={<Dashboard />} />}
                 <Route path="/projects" element={<ProjectList />} />
                 <Route path="/tasks/:projectId" element={<TaskList />} />
                 <Route path="/login" element={<Login />} />
